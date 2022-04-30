@@ -8,16 +8,9 @@ services:
     build: ./vote
     ports:
       - 5000:80
-    links:
-      - redis
   worker:
-    build: ./worker
-    links:
-     - db
-     - redis
+    build: ./worker 
   result:
     build: ./result
     ports:
-      - 5001:80
-    links:
-      - db
+      - 5001:80    
